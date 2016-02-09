@@ -19,4 +19,29 @@ class SignUpsController < ApplicationController
 		end
 
 	end
+
+	def new
+
+	end
+
+	def index
+		filter = params[:filter]
+
+		if filter
+			@sign_ups = SignUp.where(name: filter.to_s)
+		else 
+			@sign_ups = SignUp.all
+		end
+	end
+
+	def destroy
+		@sign_up = SignUp.find(params[:id])
+		@sign_up.destroy
+
+		respond_to do |format|
+	      format.html { redirect_to sign_ups_url }
+	      format.json { head :no_content }
+	    end
+	end
+
 end

@@ -1,0 +1,16 @@
+<h2>Sign Ups</h2>
+<p>Find a sign up:</p>
+
+<form action="/" method="GET">
+	<input type="text" name="filter">
+	<input type="submit" value="Search!">
+</form>
+<%= link_to "Reset search", root_path %>
+
+<ul>
+	<% @sign_ups.each do |sign_up| %>
+	<li><strong> <%= sign_up.name %></strong> | <%= sign_up.email %>  (<%= link_to "Delete", sign_up, :method => :delete %>)</li>
+	<% end %>
+</ul>
+
+<%= link_to "Create Login", new_sign_up_path %>
