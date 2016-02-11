@@ -8,8 +8,8 @@ class SignUp < ActiveRecord::Base
 	end
 
 	# redefines the method
-	def email
+	# def email
 		# super -- use the previous version of email (read attribute) and return it if present
-		read_attribute(:email) || "noreply@hackeryou.com"
-	end
+		# read_attribute(:email) || "noreply@hackeryou.com"
+	# end
 end

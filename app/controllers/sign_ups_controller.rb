@@ -21,7 +21,7 @@ class SignUpsController < ApplicationController
 	end
 
 	def new
-
+		@sign_up = SignUp.new
 	end
 
 	def index

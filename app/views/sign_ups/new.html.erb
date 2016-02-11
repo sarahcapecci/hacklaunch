@@ -1,9 +1,9 @@
 <h2>Register here</h2>
 
-<form action="/create" method="POST">
-	<input type="text" name="name" placeholder="Add your name">
-	<input type="email" name="email" placeholder="Add your e-mail">
-	<input type="submit">
-</form>
+<%= form_for @sign_up do |f|%>
+	<%= f.text_field :name %>
+	<%= f.text_field :email %>
+	<%= f.submit :submit %>
+<% end %>
 
 <%= link_to "Back to List", root_path %>
